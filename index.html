@@ -63,6 +63,18 @@
     -webkit-transform:rotateY(-180deg);  
     transform:rotateY(-180deg);
 	}
+	.nswc-viewport:focus{
+		overflow:scroll!important;
+	}
+	.nswc-viewport:hover{
+		overflow:scroll!important;
+	}
+	.nswc-viewport:hover body{
+		overflow:hidden!important;
+	}
+	.nswc-viewport:focus body{
+		overflow:hidden!important;
+	}
 </style>
 
 
@@ -95,7 +107,7 @@ function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).re
 			    } 
 			} 
 		});
-		
+
 		$('body').click(function(event){
 			let target = event.target;
 			let targetBlock = target.closest('.parent_category');
