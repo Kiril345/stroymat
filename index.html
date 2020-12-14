@@ -71,13 +71,21 @@
 		overflow:hidden!important;
 
 	}
-	.nswc-viewport{
-		overflow:scroll!important;
-	}
 	.nswc-scrollbar{
 		display:none!important;
 	}
-
+	::-webkit-scrollbar {
+    width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+    	border-radius: 10px;
+    	background-color: #4E4E4E;
+        /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+    }
 	@media screen and (min-width:1024px){
 		.wall-category-box .parent_category:hover .wall-cat-image {  
 		opacity: 0.5;  
@@ -90,7 +98,7 @@
         transform:rotateY(0);
 		}
 		.nswc-scrollbar{
-		display:block;
+		display:block!important;
 		}
 		.nswc-viewport{
 		overflow:hidden!important;
