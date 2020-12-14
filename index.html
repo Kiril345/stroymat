@@ -40,12 +40,12 @@
 
 <style>
 	.active .wall-cat-image {  
-		opacity: 0,5!important;  
+		opacity: 0.5!important;  
 		-webkit-transform:rotateY(-360deg)!important;  
 		transform:rotateY(-360deg)!important;
 	}
     .active .item-sub-category {  
-	opacity: .85!important;  
+	opacity: 0.85!important;  
     -webkit-transform:rotateY(0)!important;  
     transform:rotateY(0)!important;
 	}
@@ -74,6 +74,25 @@
 	}
 	.nswc-viewport:focus body{
 		overflow:hidden!important;
+	}
+
+	@media screen and (min-width:1024px){
+		.wall-category-box .parent_category:hover .wall-cat-image {  
+		opacity: 0.5;  
+		-webkit-transform:rotateY(-360deg);  
+		transform:rotateY(-360deg);
+	    }
+	    .wall-category-box .parent_category:hover .item-sub-category {  
+	    opacity: 0.85;  
+        -webkit-transform:rotateY(0);  
+        transform:rotateY(0);
+		}
+		.nswc-container{
+		overflow:hidden!important;
+	    }
+	    .nswc-container{
+		overflow:hidden!important;
+	    }
 	}
 </style>
 
