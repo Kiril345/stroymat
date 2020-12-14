@@ -63,10 +63,7 @@
     -webkit-transform:rotateY(-180deg);  
     transform:rotateY(-180deg);
 	}
-	.nswc-container{
-		overflow:scroll!important;
-	}
-	.nswc-container{
+	.nswc-viewport{
 		overflow:scroll!important;
 	}
 	.nswc-viewport:hover body{
@@ -76,7 +73,7 @@
 		overflow:hidden!important;
 	}
 
-	@media screen and (min-width:1024px){
+	/*@media screen and (min-width:1024px){
 		.wall-category-box .parent_category:hover .wall-cat-image {  
 		opacity: 0.5;  
 		-webkit-transform:rotateY(-360deg);  
@@ -87,15 +84,11 @@
         -webkit-transform:rotateY(0);  
         transform:rotateY(0);
 		}
-		.nswc-container{
-		overflow:hidden!important;
-	    }
 	    .nswc-container{
 		overflow:hidden!important;
 	    }
-	}
+	}*/
 </style>
-
 
 <style>
 #top2 #logo {margin-top: 8px;}
@@ -113,34 +106,36 @@ function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).re
 </script>
 <script>
 	const is_touch_device = 'ontouchstart' in document.documentElement;
-	if(is_touch_device) {
 	$(function() {
-	    $('.parent_category').click(function(event){
-			//event.preventDefault();
-			let target = event.target;
-			let targetBlock = target.closest('.parent_category');
-			if (targetBlock) {
-				let click = $(this);
-				if (!$(click).hasClass('active')) {
-				    setTimeout(function() {
-					click.addClass('active')	 
-				    }, 10);
-			    } 
-			} 
-		});
+		if(is_touch_device) {
+	        $('.parent_category').click(function(event){
+		    	//event.preventDefault();
+		    	let target = event.target;
+		    	let targetBlock = target.closest('.parent_category');
+		    	if (targetBlock) {
+		    		let click = $(this);
+		    		if (!$(click).hasClass('active')) {
+		    		    setTimeout(function() {
+		    			click.addClass('active')	 
+		    		    }, 10);
+		    	    } 
+		    	} 
+		    });
 
-		$('body').click(function(event){
-			let target = event.target;
-			let targetBlock = target.closest('.parent_category');
-			if (!targetBlock) {
-				$('.parent_category').removeClass('active');
-			} else {
-				$('.parent_category').removeClass('active');
-			}
-		});
-	});
-}
+		    $('body').click(function(event){
+		    	let target = event.target;
+		    	let targetBlock = target.closest('.parent_category');
+		    	if (!targetBlock) {
+		    		$('.parent_category').removeClass('active');
+		    	} else {
+		    		$('.parent_category').removeClass('active');
+		    	}
+		    });
+	    }
+    });
 </script>
+
+
 <!--microdatapro 7.3 open graph start -->
 <meta property="og:locale" content="ru-ru">
 <meta property="og:rich_attachment" content="true">
