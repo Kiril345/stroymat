@@ -93,6 +93,8 @@
 function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).removeAttr('style');if($(this).height() > maxheight){maxheight = $(this).height();}});$(div).height(maxheight);}
 </script>
 <script>
+	const is_touch_device = 'ontouchstart' in document.documentElement;
+	if(is_touch_device) {
 	$(function() {
 	    $('.parent_category').click(function(event){
 			//event.preventDefault();
@@ -118,6 +120,7 @@ function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).re
 			}
 		});
 	});
+}
 </script>
 <!--microdatapro 7.3 open graph start -->
 <meta property="og:locale" content="ru-ru">
