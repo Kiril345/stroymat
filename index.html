@@ -74,6 +74,14 @@
 	.nswc-scrollbar{
 		display:none!important;
 	}
+	.nswc-viewport {
+		overflow: scroll!important;
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto!important;
+	}
+	.item-sub-category>div{
+		-webkit-overflow-scrolling: touch;
+	}
 	::-webkit-scrollbar {
     width: 6px;
     }
@@ -84,8 +92,9 @@
     ::-webkit-scrollbar-thumb {
     	border-radius: 10px;
     	background-color: #4E4E4E;
-        /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
-    }
+	}
+	
+	
 	@media screen and (min-width:1024px){
 		.wall-category-box .parent_category:hover .wall-cat-image {  
 		opacity: 0.5;  
