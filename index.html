@@ -39,6 +39,9 @@
 	<link href="catalog/view/theme/revolution/stylesheet/style-new.css" rel="stylesheet">
 
 <style>
+	.disable-hover {
+        pointer-events: none!important;
+    }
 	.item-category .nswc-container {
         transition: visibility 0s linear 0.1s,opacity 0.1s linear;
         background: #ffff;
@@ -126,13 +129,29 @@
 	@media(max-width: 420px){
 		.box-item{
 			width:100%!important;
-			height: 120px;
-		}
-		.subcategory-name{
-			margin:15px 0;
+			height: auto;
 		}
 		.wall-cat-image img{
-			height: 70px;
+			height: 29px;
+			width: 29px;
+		}
+		.item-category{
+			padding: 10px;
+		}
+		.item-category a{
+			display: flex;
+			align-items: center;
+		}
+		.wall-cat-name{
+			font-size:14px;
+			padding-left:10px!important;
+		}
+		.wall-cat-name div {
+            display: flex!important;
+            align-items: center;
+        }
+		.subcategory-name{
+			padding: 10px 0;
 		}
 	}
 	
@@ -199,6 +218,7 @@ function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).re
 <!--microdatapro 7.3 open graph end -->
 <script src="//code-ya.jivosite.com/widget/lZJAZULQyT" async></script>
 
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155993848-1"></script>
 <script>
@@ -218,7 +238,8 @@ g.o=function(a,b){function d(){if(!(c.b&&a||c.i)){var b=200;200<(new Date).getTi
 "scroll",d);f(window,"resize",d)};g.lazyLoadInit=g.o;})();
 
 pagespeed.lazyLoadInit(true, "/pagespeed_static/1.JiBnMqyl6S.gif");
-</script></head>
+</script>
+</head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58S7WF7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
