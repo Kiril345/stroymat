@@ -39,6 +39,15 @@
 	<link href="catalog/view/theme/revolution/stylesheet/style-new.css" rel="stylesheet">
 
 <style>
+	.item-category .nswc-container {
+        transition: visibility 0s linear 0.1s,opacity 0.1s linear;
+        background: #ffff;
+        border: 1px solid  #ffb129;
+		padding: 10px;
+		opacity:0;
+		visibility:hidden;
+		
+    }
 	.wall-category-box .parent_category:hover .item-sub-category {  
 	    opacity: 0;  
 	}
@@ -47,6 +56,10 @@
 	}
 	.wall-category-box .parent_category:hover .wall-cat-name{
 	    opacity: 1;
+	}
+	.wall-category-box .parent_category:hover .nswc-container{
+	    opacity: 0;
+		visibility: hidden;
 	}
 
 	@media screen and (min-width: 1024px){
@@ -59,6 +72,10 @@
 		.wall-category-box .parent_category:hover .wall-cat-name{
 	    opacity: 0;
 	    }
+		.wall-category-box .parent_category:hover .nswc-container{
+	    opacity: 1;
+		visibility: visible;
+	}
 	}
 
 	.wall-category-box .parent_category.active .item-sub-category {  
@@ -71,19 +88,16 @@
 	.wall-category-box .parent_category.active .wall-cat-image{
 		opacity: 0!important;
 	}
+	.wall-category-box .parent_category.active .nswc-container{
+	    opacity: 1;
+		visibility: visible;
+	}
 
 	.item-sub-category, .wall-cat-image {    
 		-webkit-transform:rotateY(0)!important;  
 		transform:rotateY(0)!important;
 	}
 	
-	.item-category .nswc-container {
-        transition: visibility 0s linear 0.1s,opacity 0.1s linear;
-        background: #ffff;
-        border: 1px solid  #ffb129;
-		padding: 10px;
-		
-    }
 	.item-sub-category, .nswc-viewport, .nswc-container{
 		min-height:100%!important;
 	}
@@ -106,6 +120,15 @@
         .item-sub-category>div {
         overflow-y: visible!important; 
         }
+	}
+	@media(max-width: 420px){
+		.box-item{
+			width:100%!important;
+			
+		}
+		.subcategory-name{
+			margin:15px 0;
+		}
 	}
 	
 	
