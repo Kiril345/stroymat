@@ -39,76 +39,77 @@
 	<link href="catalog/view/theme/revolution/stylesheet/style-new.css" rel="stylesheet">
 
 <style>
-	@media (max-width:1024px) {
-	.active .wall-cat-image {  
-		opacity: 0.5!important;  
-		-webkit-transform:rotateY(-360deg)!important;  
-		transform:rotateY(-360deg)!important;
-	}
-    .active .item-sub-category {  
-	opacity: 0.85!important;  
-    -webkit-transform:rotateY(0)!important;  
-    transform:rotateY(0)!important;
-	}
-    .active .nswc-container  {
-    visibility: visible!important;
-    opacity: 1!important;
+	.wall-category-box .parent_category:hover .item-sub-category {  
+	    opacity: 0;  
 	}
 	.wall-category-box .parent_category:hover .wall-cat-image {  
-		opacity:1;  
-		-webkit-transform:rotateY(0);  
-		transform:rotateY(0);
+	    opacity: 1;  
 	}
-	.wall-category-box .parent_category:hover .item-sub-category {  
-	opacity: 0;  
-    -webkit-transform:rotateY(-180deg);  
-    transform:rotateY(-180deg);
+	.wall-category-box .parent_category:hover .wall-cat-name{
+	    opacity: 1;
+	}
+
+	@media screen and (min-width: 1024px){
+		.wall-category-box .parent_category:hover .item-sub-category {  
+	        opacity: 1;  
+	    }
+	    .wall-category-box .parent_category:hover .wall-cat-image{
+		    opacity: 0;
+	    }
+		.wall-category-box .parent_category:hover .wall-cat-name{
+	    opacity: 0;
+	    }
+	}
+
+	.wall-category-box .parent_category.active .item-sub-category {  
+	        opacity: 1!important;  
+	}
+	.wall-category-box .parent_category.active .wall-cat-name{
+		opacity: 0!important;
+	}
+
+	.wall-category-box .parent_category.active .wall-cat-image{
+		opacity: 0!important;
+	}
+
+	.item-sub-category, .wall-cat-image {    
+		-webkit-transform:rotateY(0)!important;  
+		transform:rotateY(0)!important;
+	}
+	
+	.item-category .nswc-container {
+        transition: visibility 0s linear 0.1s,opacity 0.1s linear;
+        background: #ffff;
+        border: 1px solid  #ffb129;
+		padding: 10px;
+		
+    }
+	.item-sub-category, .nswc-viewport, .nswc-container{
+		min-height:100%!important;
+	}
+
+	.nswc-viewport, .item-sub-category{
+		padding:0!important;
+	}
+	.nswc-viewport, .nswc-container, .item-sub-category{
+		overflow: visible!important;
+		z-index:1!important;
+	}
+	.wall-category-box, .wall-category-box .item-category{
+		overflow: visible!important;
 	}
 	.nswc-scrollbar{
 		display:none!important;
-	}
-	.wall-category-box .parent_category:focus body{
-		overflow: hidden!important;
-	}
-	.nswc-viewport{
-		overflow: scroll!important;
-		overflow-x: auto!important;
-	}
-	::-webkit-scrollbar {
-    width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb {
-    	border-radius: 10px;
-    	background-color: #4E4E4E;
-	}
-	
-	}
-	
-	@media screen and (min-width:1024px){
-		.wall-category-box .parent_category:hover .wall-cat-image {  
-		opacity: 0.5;  
-		-webkit-transform:rotateY(-360deg);  
-		transform:rotateY(-360deg);
-	    }
-	    .wall-category-box .parent_category:hover .item-sub-category {  
-	    opacity: 0.85;  
-        -webkit-transform:rotateY(0);  
-        transform:rotateY(0);
-		}
-		.nswc-scrollbar{
-		display:block!important;
-		}
-		.nswc-viewport{
-		overflow:hidden!important;
-	    }  
-	}
-	.not-show{
 		opacity: 0!important;
 	}
+	@media screen and (max-width: 991px){
+        .item-sub-category>div {
+        overflow-y: visible!important; 
+        }
+	}
+	
+	
+	
 </style>
 
 <style>
@@ -125,37 +126,6 @@
 <script>
 function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).removeAttr('style');if($(this).height() > maxheight){maxheight = $(this).height();}});$(div).height(maxheight);}
 </script>
-<script>
-	const is_touch_device = 'ontouchstart' in document.documentElement;
-	$(function() {
-		if(is_touch_device) {
-	        $('.parent_category').click(function(event){
-		    	//event.preventDefault();
-		    	let target = event.target;
-		    	let targetBlock = target.closest('.parent_category');
-		    	if (targetBlock) {
-		    		let click = $(this);
-		    		if (!$(click).hasClass('active')) {
-		    		    setTimeout(function() {
-		    			click.addClass('active')	 
-		    		    }, 10);
-		    	    } 
-		    	} 
-		    });
-
-		    $('body').click(function(event){
-		    	let target = event.target;
-		    	let targetBlock = target.closest('.parent_category');
-		    	if (!targetBlock) {
-		    		$('.parent_category').removeClass('active');
-		    	} else {
-		    		$('.parent_category').removeClass('active');
-		    	}
-		    });
-	    }
-    });
-</script>
-
 
 <!--microdatapro 7.3 open graph start -->
 <meta property="og:locale" content="ru-ru">
@@ -402,6 +372,12 @@ pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','https://stroymat.kiev.ua/'
 																		<a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/" rel="nofollow">Краски - лаки<span class="chevrond" data-toggle="collapse"><i class="fa fa-plus on"></i><i class="fa fa-minus off"></i></span></a>
 																																					<div class="collapse list-group-submenu">
 																				<ul class="list-unstyled">
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/kraski-interernye/" rel="nofollow">- Краски для внутренних работ</a></li>
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/kraski-fasadnye/" rel="nofollow">- Краски фасадные</a></li>
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/laki/" rel="nofollow">- Лаки</a></li>
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/rastvoriteli--preobrazovateli-rzhavchiny/" rel="nofollow">- Растворители, преобразователи ржавчины</a></li>
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/spetsialnye-kraski/" rel="nofollow">- Специальные краски</a></li>
+																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/emali/" rel="nofollow">- Эмали</a></li>
 																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/kraski-interernye/" rel="nofollow">- Краски для внутренних работ</a></li>
 																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/kraski-fasadnye/" rel="nofollow">- Краски фасадные</a></li>
 																																											<li><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/laki/" rel="nofollow">- Лаки</a></li>
@@ -1225,6 +1201,12 @@ $('#slideshow0').owlCarousel({
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/pazogrebnevye-plity/">- Пазогребневые плиты</a></div>
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/setka-metallicheskaya/">- Сетка металлическая</a></div>
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/tsement--pesok--scheben/">- Цемент, песок, щебень</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/gazoblok/">- Газоблок</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/kirpich/">- Кирпич</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/mastika--prajmer/">- Мастика, праймер</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/pazogrebnevye-plity/">- Пазогребневые плиты</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/setka-metallicheskaya/">- Сетка металлическая</a></div>
+															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/obschestroj/tsement--pesok--scheben/">- Цемент, песок, щебень</a></div>
 													</div>		
 										</div>		  
 			</div>
@@ -1256,6 +1238,8 @@ $('#slideshow0').owlCarousel({
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/rastvoriteli--preobrazovateli-rzhavchiny/">- Растворители, преобразователи ржавчины</a></div>
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/spetsialnye-kraski/">- Специальные краски</a></div>
 															<div class="subcategory-name"><a href="https://stroymat.kiev.ua/otdelochnye-materialy/lako-kraskoschnye-materialy/emali/">- Эмали</a></div>
+													
+													
 													</div>		
 										</div>		  
 			</div>
