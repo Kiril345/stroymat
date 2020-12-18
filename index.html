@@ -48,9 +48,19 @@
 		visibility:hidden;
 		
     }
-	
-	.wall-category-box .parent_category{
-		pointer-events:none;
+
+	.wall-category-box .parent_category:hover .item-sub-category {  
+	    opacity: 0;  
+	}
+	.wall-category-box .parent_category:hover .wall-cat-image {  
+	    opacity: 1;  
+	}
+	.wall-category-box .parent_category:hover .wall-cat-name{
+	    opacity: 1;
+	}
+	.wall-category-box .parent_category:hover .nswc-container{
+	    opacity: 0;
+		visibility: hidden;
 	}
 
 	@media screen and (min-width: 1024px){
@@ -67,9 +77,7 @@
 	    opacity: 1;
 		visibility: visible;
 	    }
-		.wall-category-box .parent_category{
-		pointer-events: auto;
-	    }
+		
 	}
 
 	.wall-category-box .parent_category.active .item-sub-category {  
