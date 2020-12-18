@@ -39,18 +39,16 @@
 	<link href="catalog/view/theme/revolution/stylesheet/style-new.css" rel="stylesheet">
 
 <style>
-	.disable-hover {
-        pointer-events: none!important;
-    }
 	.item-category .nswc-container {
         transition: visibility 0s linear 0.1s,opacity 0.1s linear;
         background: #ffff;
         border: 1px solid  #ffb129;
-		padding: 10px;
+		padding: 50px 10px 10px 10px ;
 		opacity:0;
 		visibility:hidden;
-		
     }
+	
+
 
 	.wall-category-box .parent_category:hover .item-sub-category {  
 	    opacity: 0;  
@@ -59,7 +57,7 @@
 	    opacity: 1;  
 	}
 	.wall-category-box .parent_category:hover .wall-cat-name{
-	    opacity: 1;
+	    opacity: 0;
 	}
 	.wall-category-box .parent_category:hover .nswc-container{
 	    opacity: 0;
@@ -74,7 +72,8 @@
 		    opacity: 0;
 	    }
 		.wall-category-box .parent_category:hover .wall-cat-name{
-	    opacity: 0;
+	    opacity: 1;
+		z-index: 99999;
 	    }
 		.wall-category-box .parent_category:hover .nswc-container{
 	    opacity: 1;
@@ -87,7 +86,8 @@
 	        opacity: 1!important;  
 	}
 	.wall-category-box .parent_category.active .wall-cat-name{
-		opacity: 0!important;
+		opacity: 1!important;
+		z-index: 99999;
 	}
 
 	.wall-category-box .parent_category.active .wall-cat-image{
@@ -121,12 +121,37 @@
 		display:none!important;
 		opacity: 0!important;
 	}
+	
+	.item-category a{
+		display: flex!important;
+		flex-direction: column;
+	}
+	.wall-cat-image{
+		order:2;
+	}
+	.display-table-cell{
+		display: flex!important;
+        justify-content: center;
+        align-items: center;
+	}
 	@media screen and (max-width: 991px){
         .item-sub-category>div {
         overflow-y: visible!important; 
         }
 	}
 	@media(max-width: 420px){
+		.box-item{
+			height: auto;
+		}
+		.item-category{
+			padding: 10px;
+		}
+		.item-category .nswc-container {
+		padding: 60px 10px 10px 10px ;
+        }
+		
+	}
+	/*@media(max-width: 420px){
 		.box-item{
 			width:100%!important;
 			height: auto;
@@ -153,7 +178,7 @@
 		.subcategory-name{
 			padding: 10px 0;
 		}
-	}
+	}*/
 	
 	
 	
