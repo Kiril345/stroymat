@@ -47,12 +47,15 @@
 		opacity:0;
 		visibility:hidden;
     }
+	.wall-category-box{
+		z-index:2!important;
+	} 
+	.subcategory-name a{
+		width: fit-content!important;
+	}
 	
 	.wall-category-box .parent_category:hover .item-sub-category {  
 	    opacity: 0;  
-	}
-	.wall-category-box .parent_category:hover .wall-cat-image {  
-	    opacity: 1;  
 	}
 	.wall-category-box .parent_category:hover .wall-cat-name{
 	    opacity: 1;
@@ -62,31 +65,35 @@
 	    opacity: 0;
 		visibility: hidden;
 	}
+	.wall-category-box .parent_category:hover .wall-cat-image{
+	    opacity: 1;
+		z-index: 3;
+	}
 
 	@media screen and (min-width: 1024px){
 		.wall-category-box .parent_category:hover .item-sub-category {  
 	        opacity: 1;  
 	    }
-	    .wall-category-box .parent_category:hover .wall-cat-image{
-		    opacity: 0;
-	    }
 		.wall-category-box .parent_category:hover .nswc-container{
-	    opacity: 1;
-		visibility: visible;
+	        opacity: 1;
+		    visibility: visible;
+	    }
+		.wall-category-box .parent_category:hover .wall-cat-image{
+	    opacity: 0;
 	    }
 		
 	}
 
 	.wall-category-box .parent_category.active .item-sub-category {  
-	        opacity: 1!important;  
+	    opacity: 1!important;  
 	}
 	.wall-category-box .parent_category.active .wall-cat-name{
 		opacity: 1!important;
 		z-index: 3;
 	}
-
 	.wall-category-box .parent_category.active .wall-cat-image{
-		opacity: 0!important;
+		z-index: 3;
+		opacity: 1;
 	}
 	.wall-category-box .parent_category.active .nswc-container{
 	    opacity: 1;
@@ -136,11 +143,11 @@
 	}
 	@media(max-width: 420px){
 		.item-category a{
-		flex-direction: row;
-		width: fit-content;
+		    flex-direction: row;
+		    width: fit-content;
 	    }
 		.wall-cat-image{
-		order: 0;
+		    order: 0;
 	    }
 		.box-item{
 			height: auto;
@@ -149,11 +156,9 @@
 			padding: 10px 0;
 		}
 		.item-category .nswc-container {
-		padding: 65px 10px 10px 10px ;
+		    padding: 65px 10px 10px 10px ;
         }
-		.subcategory-name a{
-		   width: fit-content!important;
-	    }
+		
 		.subcategory-name{
 			padding-bottom:10px;
 		}
@@ -169,12 +174,11 @@
 			padding: 10px;
 		}
 		.item-category a{
-			display: flex;
 			align-items: center;
 		}
 		.wall-cat-name{
-			font-size:14px;
-			padding-left:10px!important;
+			font-size: 14px;
+			padding-left: 10px!important;
 		}
 		.wall-cat-name div {
             display: flex!important;
