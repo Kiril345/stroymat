@@ -48,8 +48,6 @@
 		visibility:hidden;
     }
 	
-
-
 	.wall-category-box .parent_category:hover .item-sub-category {  
 	    opacity: 0;  
 	}
@@ -73,7 +71,7 @@
 	    }
 		.wall-category-box .parent_category:hover .wall-cat-name{
 	    opacity: 1;
-		z-index: 99999;
+		z-index: 3;
 	    }
 		.wall-category-box .parent_category:hover .nswc-container{
 	    opacity: 1;
@@ -87,7 +85,7 @@
 	}
 	.wall-category-box .parent_category.active .wall-cat-name{
 		opacity: 1!important;
-		z-index: 99999;
+		z-index: 3;
 	}
 
 	.wall-category-box .parent_category.active .wall-cat-image{
@@ -149,6 +147,9 @@
 		.item-category .nswc-container {
 		padding: 60px 10px 10px 10px ;
         }
+		.subcategory-name a{
+		width:fit-content!important;
+	    }
 		
 	}
 	/*@media(max-width: 420px){
